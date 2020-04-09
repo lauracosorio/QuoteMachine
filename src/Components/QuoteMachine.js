@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import QuoteBox from "./QuoteBox.jsx";
 import Button from "./Button.jsx";
-import ShareButton from "./ShareButton.jsx";
 import "../Styles.css/QuoteMachine.css";
+import Twitter from "./Twitter.jsx";
 
 
 class QuoteMachine extends Component {
@@ -27,8 +27,8 @@ class QuoteMachine extends Component {
       )
       .then(res => {
         let data = res.data.quotes;
-        let quoteN = Math.floor(Math.random() * data.length);
-        let aleatorio = data[quoteN];
+        let quoteSelected = Math.floor(Math.random() * data.length);
+        let aleatorio = data[quoteSelected];
 
         this.setState({
           quote: aleatorio["quote"],
@@ -53,7 +53,7 @@ class QuoteMachine extends Component {
           <QuoteBox quote={quote} author={author} />
 
           <div id="buttons">
-            <ShareButton quote = {quote}
+            <Twitter quote = {quote}
             author = {author} />
             <Button onClick={this.NewQuote} title="New Quote" />
           </div>

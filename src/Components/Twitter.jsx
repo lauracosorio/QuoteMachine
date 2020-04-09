@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ShareButton = ({author, quote}) => {
+const Twitter = ({author, quote}) => {
 
     return (
         <>
@@ -19,4 +19,4 @@ const ShareButton = ({author, quote}) => {
     )
 }
 
-export default ShareButton;
+export default Twitter;
